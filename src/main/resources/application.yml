@@ -1,15 +1,18 @@
 spring:
   application:
-    name: data-base-account
+    name: bank-application
   datasource:
-    url: jdbc:postgresql://localhost:5432/bank_db
-    username: user
-    password: password
+    url: jdbc:postgresql://localhost:5555/bank_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update # Gera as tabelas automaticamente
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
   kafka:
     bootstrap-servers: localhost:9092
